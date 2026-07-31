@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   yesBtn.addEventListener('click', () => {
     showConfetti();
-    showToast("¡Perfecto! Agendo la misión y compro palomitas ✨");
+    showToast("¡Perfecto! Acabas de alegrar mi multiverso✨");
   });
 
   noBtn.addEventListener('click', () => {
