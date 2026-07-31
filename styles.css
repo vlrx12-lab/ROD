@@ -1,0 +1,202 @@
+:root{
+  --bg-red: #b92b2b;
+  --card-shadow: rgba(11,7,7,0.6);
+  --cream: #f6efe6;
+  --muted: #7a6a53;
+  --comic-accent: #e53b2f;
+  --panel-blue: #0c3b55;
+  --paper-tex: rgba(0,0,0,0.03);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  background:
+    radial-gradient(ellipse at 20% 80%, rgba(255,255,255,0.02) 0%, rgba(0,0,0,0) 25%),
+    var(--bg-red);
+  color:#111;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:40px;
+}
+
+/* página: overlay con trama de puntos (fondo) */
+.page-bg{
+  width:100%;
+  max-width:1100px;
+  position:relative;
+  padding:60px 40px;
+  background-image:
+    radial-gradient(circle at 10px 10px, rgba(0,0,0,0.06) 1px, transparent 2px);
+  background-size:16px 16px;
+  border-radius:6px;
+}
+
+/* Invitación central */
+.invitation-card{
+  width:860px;
+  max-width:100%;
+  display:flex;
+  box-shadow: 20px 18px 0 rgba(0,0,0,0.55), 0 12px 30px var(--card-shadow);
+  border-radius:6px;
+  overflow:hidden;
+  border:6px solid rgba(0,0,0,0.55);
+  margin:0 auto;
+  background: linear-gradient(180deg, rgba(0,0,0,0.06), rgba(255,255,255,0.02));
+}
+
+/* LEFT: panel azul con trama halftone */
+.left-panel{
+  width:42%;
+  min-height:520px;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(255,255,255,0.02), transparent 10%),
+    repeating-radial-gradient(circle at 50% 50%, rgba(255,255,255,0.06) 0 1px, transparent 2px 4px),
+    linear-gradient(135deg, #0b3a4f, #0a2b3b);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  padding:28px;
+}
+
+/* máscara centrada */
+.mask-wrap{width:70%; display:flex; align-items:center; justify-content:center}
+.mask{width:100%; height:auto; filter:drop-shadow(0 8px 0 rgba(0,0,0,0.6))}
+
+/* THWIP en esquina inferior */
+.thwip{
+  position:absolute;
+  right:10px;
+  bottom:14px;
+  font-family: "Bangers", cursive;
+  font-size:34px;
+  color:#ffd166;
+  text-shadow: 2px 2px 0 #132238;
+  transform:rotate(-6deg);
+}
+
+/* RIGHT: papel crema */
+.right-panel{
+  width:58%;
+  background: linear-gradient(180deg, var(--cream), #f2e8da);
+  padding:34px 36px;
+  position:relative;
+  font-size:15px;
+  color:#2a2a2a;
+}
+
+/* meta-strip */
+.meta-strip{
+  display:inline-block;
+  background:#1e1e1e;
+  color:#ffd166;
+  padding:6px 10px;
+  font-weight:700;
+  font-size:12px;
+  border-radius:4px;
+  letter-spacing:0.6px;
+  margin-bottom:14px;
+}
+
+/* Headline estilo cómic */
+.headline{
+  font-family: "Bangers", cursive;
+  font-size:56px;
+  line-height:0.9;
+  margin:10px 0 12px;
+  color:#121212;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  text-shadow: 2px 4px 0 rgba(0,0,0,0.12);
+}
+.headline .accent{
+  color: var(--comic-accent);
+  font-size:72px;
+  display:inline-block;
+  text-shadow: 3px 5px 0 rgba(0,0,0,0.14);
+}
+
+/* Texto introductorio */
+.lead{
+  color:var(--muted);
+  margin:6px 0 18px;
+  max-width:420px;
+}
+
+/* cuadro con info */
+.info-grid{
+  display:flex;
+  gap:14px;
+  margin:10px 0 18px;
+  flex-wrap:wrap;
+}
+.info{
+  border:2px solid rgba(0,0,0,0.08);
+  background: linear-gradient(180deg, rgba(0,0,0,0.01), rgba(0,0,0,0.02));
+  padding:10px 12px;
+  min-width:120px;
+  flex:1;
+}
+.label{
+  font-size:11px;
+  color:#9b7f63;
+  font-weight:700;
+  letter-spacing:0.6px;
+  margin-bottom:6px;
+}
+.value{
+  font-weight:700;
+  color:#2b2b2b;
+}
+
+/* llamada a la acción */
+.prompt{margin-top:8px;font-weight:600;color:#333}
+.cta-row{display:flex;gap:12px;margin-top:12px;align-items:center}
+.cta{padding:12px 20px;border-radius:6px;border:3px solid #1e1e1e;cursor:pointer;font-weight:800;text-transform:uppercase;letter-spacing:0.8px}
+.primary{
+  background: linear-gradient(180deg, var(--comic-accent), #b92b2b);
+  color:#fff;
+  box-shadow: 0 6px 0 rgba(0,0,0,0.25), inset 0 -3px 0 rgba(0,0,0,0.08);
+}
+.outline{
+  background:transparent;
+  color:#111;
+  box-shadow: none;
+  border:3px solid #111;
+}
+
+/* pie */
+.foot-note{display:block;margin-top:12px;color:#6b584a;font-size:12px}
+
+/* Modal styling */
+.modal{
+  position:fixed; inset:0; display:flex; align-items:center; justify-content:center;
+  background: rgba(2,6,23,0.6); backdrop-filter: blur(3px); z-index:60;
+}
+.modal.hidden{display:none}
+.modal-panel{
+  width:92%; max-width:520px; background:var(--cream); padding:18px; border-radius:8px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.6);
+  border:4px solid rgba(0,0,0,0.06);
+}
+.modal-actions{display:grid; grid-template-columns:repeat(2,1fr); gap:8px; margin-top:10px}
+.modal-btn{padding:10px;border-radius:6px;border:0;background:#1a2b35;color:#fff; cursor:pointer; font-weight:700}
+
+/* modal result */
+.modal-result.hidden{display:none}
+
+/* confetti container */
+.confetti{position:fixed;left:0;top:0;width:100%;height:100%;pointer-events:none;z-index:70}
+.confetti.hidden{display:none}
+
+/* responsive */
+@media (max-width:860px){
+  .invitation-card{flex-direction:column}
+  .left-panel, .right-panel{width:100%}
+  .headline{font-size:42px}
+  .headline .accent{font-size:48px}
+}
