@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Invitación para Danae — Spider‑Man: Brand New Day</title>
+
+  <!-- Fuentes estilo cómic -->
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Montserrat:wght@300;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-bg">
+    <!-- decorativo: telarañas en esquinas -->
+    <svg class="web web-left" viewBox="0 0 200 200" aria-hidden="true">
+      <path d="M0,200 C60,140 80,100 100,80" stroke="rgba(255,255,255,0.06)" stroke-width="2" fill="none"/>
+      <path d="M40,200 C60,160 90,130 120,110" stroke="rgba(255,255,255,0.04)" stroke-width="1.2" fill="none"/>
+    </svg>
+    <svg class="web web-right" viewBox="0 0 200 200" aria-hidden="true">
+      <path d="M200,0 C140,60 120,100 100,120" stroke="rgba(255,255,255,0.06)" stroke-width="2" fill="none"/>
+      <path d="M160,0 C140,40 110,70 80,90" stroke="rgba(255,255,255,0.04)" stroke-width="1.2" fill="none"/>
+    </svg>
+
+    <main class="invitation-card" role="main" aria-labelledby="mainTitle">
+      <section class="left-panel" aria-hidden="true">
+        <!-- GIF de Spider-Man -->
+        <div class="mask-wrap">
+          <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExYm42bnEybmhmNHZxdzJwemI4azBqbXdqdG1rM2dsdmNwZDJzdDEycyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xTiTnHvXHHxOTcdmxO/giphy.gif" alt="Spider-Man animado" class="mask-gif">
+        </div>
+        <div class="thwip">THWIP!</div>
+      </section>
+
+      <section class="right-panel">
+        <div class="meta-strip">EDICIÓN ESPECIAL · SOLO PARA TI</div>
+        <h1 id="mainTitle" class="headline">
+          ¿QUIERES<br/>IR
+          <span class="accent">AL CINE</span><br/>
+          CONMIGO, DANAE?
+        </h1>
+
+        <p class="lead">
+          Tengo un plan que podría superar cualquier multiverso: tú, yo, una película de Spider-Man y palomitas para compartir.
+        </p>
+
+        <div class="info-grid">
+          <div class="info">
+            <div class="label">PELÍCULA</div>
+            <div class="value">Spider‑Man: Brand New Day</div>
+          </div>
+          <div class="info">
+            <div class="label">CUÁNDO</div>
+            <div class="value">Sábado 1 de agosto, 19:30</div>
+          </div>
+          <div class="info">
+            <div class="label">PALOMITAS</div>
+            <div class="value">¡Yo invito!</div>
+          </div>
+        </div>
+
+        <p class="prompt">Entonces... ¿aceptas esta misión?</p>
+
+        <div class="cta-row">
+          <button id="yesBtn" class="cta primary">SÍ, VAMOS</button>
+          <button id="noBtn" class="cta outline">NO</button>
+        </div>
+
+        <small class="foot-note">Prometo no contar spoilers.</small>
+      </section>
+    </main>
+
+    <!-- Modal persuasión (igual que antes, pero estilizado acorde) -->
+    <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-panel">
+        <h2 id="modalTitle">¿En serio no quieres ir?</h2>
+        <p id="modalText">Antes de decidir, escoge una opción — ninguna es mala 😉</p>
+
+        <div class="modal-actions" id="modalOptions">
+          <button class="modal-btn" data-action="bribe">Palomitas + bebida</button>
+          <button class="modal-btn" data-action="reschedule">Otro día</button>
+          <button class="modal-btn" data-action="guilt">Recuerda los besitos pendientes</button>
+          <button class="modal-btn" data-action="think">Dame tiempo para pensarlo</button>
+        </div>
+
+        <div class="modal-result hidden" id="modalResult">
+          <p id="resultText"></p>
+          <div class="result-actions">
+            <button id="acceptFromModal" class="btn accept">Aceptar</button>
+            <button id="closeModal" class="btn neutral">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="confetti" class="confetti hidden" aria-hidden="true"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
